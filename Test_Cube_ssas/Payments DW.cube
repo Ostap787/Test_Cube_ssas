@@ -1,0 +1,662 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="56fe76a5-d005-4de1-a7fc-102909124a90" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Payments DW</ID>
+  <Name>Payments DW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="7cd7cf89-7a0b-4354-b00d-e853459e57c6">
+      <ID>Dim Employee</ID>
+      <Name>Dim Employee</Name>
+      <DimensionID>Dim Employee</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="676537dc-9c5c-4dac-a062-df2dbc1bae3e">
+          <AttributeID>Employee ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e2a4c66f-f10a-4555-9d7b-0b888889533d">
+          <AttributeID>Position ID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a22ead86-5c39-4eaf-b644-114d58431fa0">
+          <AttributeID>Structural Unit ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="44f23b5d-181c-4bfd-ba08-d39a0716f990">
+      <ID>Dim Date</ID>
+      <Name>Dim Date</Name>
+      <DimensionID>Dim Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="9a86757e-a606-4152-8863-5bc31566417e">
+          <AttributeID>Date ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="7e52c276-7bed-43eb-b337-9c79f714dfef">
+      <ID>Dim Structural Unit</ID>
+      <Name>Dim Structural Unit</Name>
+      <DimensionID>Dim Structural Unit</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="511beec5-0c70-477b-bcfd-c6ccf3e1cd78">
+          <AttributeID>Structural Unit ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="dad58b96-e6cd-4255-a66a-007840fca187">
+      <ID>Dim Position</ID>
+      <Name>Dim Position</Name>
+      <DimensionID>Dim Position</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="8068f1e1-05f0-4f1e-bc13-ad53aac26efc">
+          <AttributeID>Position ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="1a88c52e-f7bc-455f-9089-807a68929568">
+      <ID>Fact Salary</ID>
+      <Name>Fact Salary</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="9477d8a7-8ed2-4a06-8adc-4206267f45af">
+          <ID>Basic Salary</ID>
+          <Name>Basic Salary</Name>
+          <Source dwd:design-time-name="37ed4ed5-b28a-4565-87a3-b0df5820c544">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="df8a257e-c2f0-472a-b04e-af0e067974b8">
+              <TableID>dbo_Fact_Salary</TableID>
+              <ColumnID>BasicSalary</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="49854afc-ce45-4335-9cc6-fdf4202bae1b">
+          <ID>Additional Salary</ID>
+          <Name>Additional Salary</Name>
+          <Source dwd:design-time-name="f3bf47f9-f54f-46d8-80db-96e94000d027">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="13cc09f7-3560-4023-896a-2cbc03bc8fec">
+              <TableID>dbo_Fact_Salary</TableID>
+              <ColumnID>AdditionalSalary</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="1e27053b-368c-4937-9115-2e56250afc4d">
+          <ID>Social Tax</ID>
+          <Name>Social Tax</Name>
+          <Source dwd:design-time-name="d3f6d22d-f478-4edc-92ab-71a51600dae9">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0f6c91b5-a9a8-4b6a-80b9-b6444091457c">
+              <TableID>dbo_Fact_Salary</TableID>
+              <ColumnID>SocialTax</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3d9e9af5-688f-491c-9ec8-f5ec436feb6d">
+          <ID>Accrued Salary</ID>
+          <Name>Accrued Salary</Name>
+          <Source dwd:design-time-name="dfd08a83-fe20-422a-a5be-f1bfb8391fa4">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b8d5e75f-0484-46e6-9b96-79e369ffd967">
+              <TableID>dbo_Fact_Salary</TableID>
+              <ColumnID>AccruedSalary</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="aadfc8e7-624c-4a27-a9a4-ccaba76f4e16">
+          <ID>Penalty</ID>
+          <Name>Penalty</Name>
+          <Source dwd:design-time-name="195a8c50-e5d4-4cd5-9908-1a410d125492">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c02eca94-b403-4135-b4cf-ea78e9ac5fad">
+              <TableID>dbo_Fact_Salary</TableID>
+              <ColumnID>Penalty</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="cc69f242-c8d9-444e-bb76-e0b7d1a0f1fa">
+          <ID>Vacation ID</ID>
+          <Name>Vacation ID</Name>
+          <Source dwd:design-time-name="45759d98-b8fa-4c52-a204-56e6f4a1138d">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="37f0dadd-39aa-4a90-b833-40b8984dba4e">
+              <TableID>dbo_Fact_Salary</TableID>
+              <ColumnID>VacationID</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="162409bc-75cd-4694-9130-d1e35eca5fa7">
+          <ID>Structural Unit ID</ID>
+          <Name>Structural Unit ID</Name>
+          <Source dwd:design-time-name="9b96d3a7-60ed-494e-a297-b73c8fb1919d">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="38769b5a-9bc3-4ec3-a129-5d467c40d527">
+              <TableID>dbo_Fact_Salary</TableID>
+              <ColumnID>StructuralUnitID</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="49065aca-9945-4996-bd3e-529a30cd61b7">
+          <ID>Position ID</ID>
+          <Name>Position ID</Name>
+          <Source dwd:design-time-name="265ee0a8-9b49-4fbc-8f46-7cde86f887e8">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3aaeae7e-b640-4f4c-8b6a-6e9e392fd4ab">
+              <TableID>dbo_Fact_Salary</TableID>
+              <ColumnID>PositionID</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="582bdd63-b145-441d-9d2c-301c242353b0">
+          <ID>Fact Salary Count</ID>
+          <Name>Fact Salary Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="8ef8f48b-50d6-4329-963d-101c762b1ce6">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="9b20bca7-c542-4fc8-b43c-d34add510f7c">
+              <TableID>dbo_Fact_Salary</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="42714665-322e-4367-85bd-9ae7c669917e">
+          <CubeDimensionID>Dim Employee</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d26b3ccf-0d20-463e-858d-32f3f2fcc0bc">
+              <AttributeID>Employee ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="dd04bcaa-78a2-4768-a52a-444f095bc2bd">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2daa7da4-9394-43f2-a0f5-956c6df9be15">
+                    <TableID>dbo_Fact_Salary</TableID>
+                    <ColumnID>EmployeeID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6e420a8a-6ff4-4d29-bfec-853ff3a74bf8">
+          <CubeDimensionID>Dim Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e2d26a77-8ec1-4d64-a0ba-10c25e99b5ae">
+              <AttributeID>Date ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="01669d5d-2163-4872-a6ab-3a3ecce83ede">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="41667b5f-1573-49e2-a058-592d08ea5b67">
+                    <TableID>dbo_Fact_Salary</TableID>
+                    <ColumnID>DateID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="9751b0e1-3434-4fe6-befe-e06ac3ebb168">
+          <CubeDimensionID>Dim Position</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="299ee01d-e3e7-413b-be6c-4101b82f213e">
+              <AttributeID>Position ID</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Dim Employee</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Position ID</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="9faadca8-d3c8-4285-ad43-94eeb091fa4d">
+          <CubeDimensionID>Dim Structural Unit</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="3d90d9b7-2921-43fa-981b-cfe32435d52e">
+              <AttributeID>Structural Unit ID</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Dim Employee</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Structural Unit ID</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="c38ee87e-82a9-4ca1-b0bb-8ec70e8cea4f">
+      <ID>Dim Vacation</ID>
+      <Name>Dim Vacation</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="86911991-7e89-4b5a-bd9f-11422e58ef5d">
+          <ID>Duration</ID>
+          <Name>Duration</Name>
+          <Source dwd:design-time-name="7064b8f9-8d3a-43c3-8879-e0509fa23506">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="aee7e24d-81c9-4fac-b4d7-7b842fa7a2f6">
+              <TableID>dbo_Dim_Vacation</TableID>
+              <ColumnID>Duration</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="1b880671-1003-49f5-a302-d4d71b879153">
+          <ID>Dim Vacation Count</ID>
+          <Name>Dim Vacation Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="0e0bdd28-082a-4dbb-b765-b224c55a75bc">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="57fee0b9-f5c1-4b68-ad28-2591b0150eb4">
+              <TableID>dbo_Dim_Vacation</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d1ed7d02-28a6-4e51-8f66-8f5063fc20fb">
+          <CubeDimensionID>Dim Employee</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ecb4b61a-bbcf-4228-9892-2899c724d854">
+              <AttributeID>Employee ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="960bcb37-3436-43bd-9edd-9ded678d8313">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ad865268-1a7e-4854-bddb-cfe2c1ebc649">
+                    <TableID>dbo_Dim_Vacation</TableID>
+                    <ColumnID>EmployeeID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="23bc35de-3c6e-4982-b258-d2455f0b7169">
+          <CubeDimensionID>Dim Position</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="39e04ea9-d0b4-4352-928b-70615c889f65">
+              <AttributeID>Position ID</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Dim Employee</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Position ID</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="c6d1e432-72ac-4256-8a3b-19e5525d914d">
+          <CubeDimensionID>Dim Structural Unit</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a2496b38-6c42-4821-afa9-f2e39a88d7f7">
+              <AttributeID>Structural Unit ID</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Dim Employee</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Structural Unit ID</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="628e0841-31ba-4dc9-8c78-9d5d4ad20528">
+      <ID>Dim Structural Unit</ID>
+      <Name>Dim Structural Unit</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="f8f988a1-f4ab-41d1-8c4f-36a00d7d2211">
+          <ID>Chief ID</ID>
+          <Name>Chief ID</Name>
+          <Source dwd:design-time-name="dabfb0d6-91c7-4fb3-87de-dd9f35fbaa58">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="0a8960b0-eeb2-453a-abf5-6890fb94e24e">
+              <TableID>dbo_Dim_Structural_Unit</TableID>
+              <ColumnID>ChiefID</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9bc3c00b-43e7-4848-8bd5-b505c02d7556">
+          <ID>Dim Structural Unit Count</ID>
+          <Name>Dim Structural Unit Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="237d8b5a-dfd4-441f-8203-109bdbd25efe">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="6e6bb50c-17e5-4d3c-87bb-aea6404a73c7">
+              <TableID>dbo_Dim_Structural_Unit</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="a3309a8d-0358-431c-91f3-62e61b81d252">
+          <CubeDimensionID>Dim Structural Unit</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a3f1c779-f446-4406-aa9a-bef6b4d15c22">
+              <AttributeID>Structural Unit ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0866f721-f311-4865-b4ce-a5742c83a384">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="01733113-4a75-42ea-920b-590b15807810">
+                    <TableID>dbo_Dim_Structural_Unit</TableID>
+                    <ColumnID>StructuralUnitID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="05a6b1b9-082c-4436-aa5d-c9e87507a31d">
+      <ID>Dim Position</ID>
+      <Name>Dim Position</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="d62c2316-6cc2-4a81-a711-f2393b3eefbd">
+          <ID>Hourly Rate</ID>
+          <Name>Hourly Rate</Name>
+          <Source dwd:design-time-name="4b07a84a-3c3d-4f7e-b742-cb8682a16374">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="44fc72fc-0e74-4228-95e4-4a2e4366dae8">
+              <TableID>dbo_Dim_Position</TableID>
+              <ColumnID>HourlyRate</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2c9db87c-df0a-4450-839c-a0ae00b6ad3a">
+          <ID>Dim Position Count</ID>
+          <Name>Dim Position Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="7f033818-2d4b-4eff-affc-7082ecb26cc7">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="e686a9fc-7ec4-4c14-b896-6543a57f55d5">
+              <TableID>dbo_Dim_Position</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="fea4010a-89c1-4aa7-924e-9385a6d3ba5f">
+          <CubeDimensionID>Dim Position</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6e62ad38-3f35-4356-9c1c-bcac56f9d546">
+              <AttributeID>Position ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d26f3b8e-0e63-4ca1-9c18-169704fd0332">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="7150fbd8-0703-405c-ac1e-cf1e8eb3585a">
+                    <TableID>dbo_Dim_Position</TableID>
+                    <ColumnID>PositionID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="5e173544-e53f-43ef-aea6-555e2d7ba680">
+      <ID>Dim Employee</ID>
+      <Name>Dim Employee</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="71c01588-3c89-49d0-bb6b-629b66bf06c0">
+          <ID>Roll Number</ID>
+          <Name>Roll Number</Name>
+          <Source dwd:design-time-name="e20765d9-9c5d-406d-a17c-ea5f1b0196ac">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a94e6ea4-fe31-428b-9f1b-4ce70cb3524c">
+              <TableID>dbo_Dim_Employee</TableID>
+              <ColumnID>RollNumber</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4b73a88a-f81e-4c6d-8c94-9b644ebe436b">
+          <ID>Dim Employee Count</ID>
+          <Name>Dim Employee Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="f0378739-09a5-4ca6-b655-df0889ca5ceb">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="2a329953-1c50-45f3-a0e7-2a634c547966">
+              <TableID>dbo_Dim_Employee</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="da4c975f-80b6-4390-8571-4e57abae0c6b">
+          <CubeDimensionID>Dim Employee</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="98d76376-89c5-4c7b-ae23-ec18f74d3440">
+              <AttributeID>Employee ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b454fd6d-6acb-44f5-9f17-ed9890bd114f">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3d435794-6d3f-4e6f-b6bf-7b21ad410722">
+                    <TableID>dbo_Dim_Employee</TableID>
+                    <ColumnID>EmployeeID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="377827f1-e285-4238-8ea0-b2c89397061a">
+          <CubeDimensionID>Dim Position</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="dc257b06-dfc9-45df-ba10-54f4363e4933">
+              <AttributeID>Position ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="47c3d34f-42bd-4751-b3f4-ff04e98103cb">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d474beb2-84b9-4923-bbb2-57ce193989b6">
+                    <TableID>dbo_Dim_Employee</TableID>
+                    <ColumnID>PositionID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2835b350-d29a-43dd-adc8-cf29095693f2">
+          <CubeDimensionID>Dim Structural Unit</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="daf1294b-6b4a-472b-88b2-030665c78dd1">
+              <AttributeID>Structural Unit ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="2b62cb26-1e26-4a5e-bc4d-cf172de349b7">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e66f5096-4330-4ba2-b42d-5e3c1aa6dde4">
+                    <TableID>dbo_Dim_Employee</TableID>
+                    <ColumnID>StructuralUnitID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="d80368fb-94bd-4464-8eed-994064522699">
+      <ID>Dim Date</ID>
+      <Name>Dim Date</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="b9ab2d96-9007-452d-97bd-cdd535c55e3b">
+          <ID>Year</ID>
+          <Name>Year</Name>
+          <Source dwd:design-time-name="7dc3d471-f9ce-424b-8b52-e390f307f9ba">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7c42c177-0321-493e-944f-cfa9f1b46635">
+              <TableID>dbo_Dim_Date</TableID>
+              <ColumnID>Year</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="36a4e870-08df-495a-a563-34d0f5964c31">
+          <ID>Month</ID>
+          <Name>Month</Name>
+          <Source dwd:design-time-name="f930cc1a-b195-491a-8c73-14bbf45b2bd5">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2a45b9e8-7721-433c-944a-1c937d72ca16">
+              <TableID>dbo_Dim_Date</TableID>
+              <ColumnID>Month</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b6d16c58-4aa2-4334-97e5-230f988a2f4d">
+          <ID>Day</ID>
+          <Name>Day</Name>
+          <Source dwd:design-time-name="e3330500-f4e1-4cdb-96d8-9ee7d1baef24">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f8eb1e50-c45d-453b-bbec-eaf7c2aaeb1e">
+              <TableID>dbo_Dim_Date</TableID>
+              <ColumnID>Day</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8640e44c-eb86-4252-8f73-a7c58e72c956">
+          <ID>Quarter</ID>
+          <Name>Quarter</Name>
+          <Source dwd:design-time-name="7d505ca1-0b40-42d3-bf1d-dc8116723aa3">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e8e2cd7a-21a4-4163-9bcc-76cb8e0d7288">
+              <TableID>dbo_Dim_Date</TableID>
+              <ColumnID>Quarter</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5f9286d5-b4e7-4a0f-be6b-ecb246e51b76">
+          <ID>Week</ID>
+          <Name>Week</Name>
+          <Source dwd:design-time-name="d08267f3-7dce-46a3-bd76-d779a9a4130e">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b2a26f0c-6201-4c27-96af-9a9388b3a8b6">
+              <TableID>dbo_Dim_Date</TableID>
+              <ColumnID>Week</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7fd56b19-f11c-4c15-851c-835768bad1ad">
+          <ID>Dim Date Count</ID>
+          <Name>Dim Date Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="1eaf8d3d-5f6c-4e18-b323-86c87e9bc9d2">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="c95c39ac-f772-4ed8-995c-70a10f3cf2f8">
+              <TableID>dbo_Dim_Date</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="b7f2ad50-65d1-42c6-bff3-b3f21fd0004a">
+          <CubeDimensionID>Dim Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b4d20d69-a145-435d-84de-0857ecc9febc">
+              <AttributeID>Date ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1598f5e6-2f7c-47df-8510-0c4a9304defb">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ad907060-6d74-4777-83f9-bada468b1148">
+                    <TableID>dbo_Dim_Date</TableID>
+                    <ColumnID>DateID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="69c40bab-adbf-42dc-8e92-f50da7e5a29b">
+    <DataSourceViewID>Payments DW</DataSourceViewID>
+  </Source>
+</Cube>
